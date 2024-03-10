@@ -84,6 +84,4 @@ Sum(vac.new_vaccinations) over (partition by dea.location order by dea.location,
 as RollingPeopleVaccinated
 from CovidDeaths dea,CovidVaccinations vac
 where dea.location = vac.location and dea.date = vac.date and dea.continent is not null
-
-
 select *, (rollingPeopleVaccinated/population)*100 as percentagePeopleVaccinated from #PopvsVac
